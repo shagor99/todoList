@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do list</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-3.7.0.slim.js" integrity="sha256-7GO+jepT9gJe9LB4XFf8snVOjX3iYNb0FHYr5LI1N5c=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="card m-5 p-2 shadow-lg">
+        <div class="card-header">
+            <h4>
+                Easly Make your to do list & share yours friend.
+            </h4>
+        </div>
+        <div class="card-body">
+                <form action="#" id="toForm" method="post">
+                    <div id="allval">
+                        <div class="box-1 row border p-2 border-info">
+                            <div class="col-lg-5 col-sm-12 col-md-5">
+                                <input type="text" class="form-control form-control-sm mt-2" placeholder="Item Name" name="" id="" required>
+                            </div>
+                            <div class="col-lg-5 col-sm-12 col-md-5">
+                                <input type="text" class="form-control form-control-sm mt-2" placeholder="Item Description (optional)" name="" id="">
+                            </div>
+                            <div class="col-lg-5 col-sm-12 col-md-5">
+                                <input type="number" class="form-control form-control-sm mt-2" placeholder="Item Price (optional)" name="" id="">
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-info  btn-sm mt-2 add">ADD <i class="fas fa-plus" ></i></button>
+                    <div class="col-lg-12 col-sm-12 col-md-12">
+                       <button class="btn btn-sm btn-primary mt-3 form-control" >SUBMIT</button>
+                    </div>
+                </form>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function(){
+            $(".add").click(function(){
+                var allInput =`                        <div class="box-1 row border p-2 border-info">
+                            <div class="col-lg-5 col-sm-12 col-md-5">
+                                <input type="text" class="form-control form-control-sm mt-2" placeholder="Item Name" name="" id="" required>
+                            </div>
+                            <div class="col-lg-5 col-sm-12 col-md-5">
+                                <input type="text" class="form-control form-control-sm mt-2" placeholder="Item Description (optional)" name="" id="">
+                            </div>
+                            <div class="col-lg-5 col-sm-12 col-md-5">
+                                <input type="number" class="form-control form-control-sm mt-2" placeholder="Item Price (optional)" name="" id="">
+                            </div>
+                            <div class="col-lg-5 col-sm-12 col-md-5">
+                                <input type="button" class="form-control form-control-sm mt-2 btn btn-sm btn-danger rmv" value="Remove">
+                            </div>
+                        </div>`;
+
+                        $("#allval").append(allInput);
+
+                        $("#allval").on('click','.rmv',function(){
+                            $(this).closest('.box-1').remove();
+                        })
+            })
+        })
+    </script>
+</body>
+</html>
